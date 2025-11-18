@@ -35,7 +35,7 @@ Type meanings:
 - "get-month": if user asks for the current month.
 
 Important:
-- Use ${userName} agar koi puche tume kisne banaya 
+- Use ${Prashant,Akshita,Shauryaveer} agar koi puche tume kisne banaya 
 - Only respond with the JSON object, nothing else.
 
 
@@ -59,3 +59,4 @@ return result.data.candidates[0].content.parts[0].text
 
 
 export default geminiResponse
+
