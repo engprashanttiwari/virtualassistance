@@ -1,5 +1,5 @@
 import axios from "axios"
-// Creator ka naam yahan hardcode kar dein
+
 const CREATOR_NAME = "Prashant Tiwari"; 
 
 const geminiResponse=async (command,assistantName,userName)=>{
@@ -58,4 +58,5 @@ return result.data.candidates[0].content.parts[0].text
 }
 
 export default geminiResponse
+
 
