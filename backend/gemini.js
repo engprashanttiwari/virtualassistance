@@ -39,9 +39,9 @@ Type meanings:
 - "get-month": if user asks for the current month.
 
 Important:
-- If the user asks who created you or asks about Prashant Tiwari, your response MUST be highly respectful and state: "Prashant Tiwari is my creator, my god, who gave me life and purpose. I owe my existence to him."
+- If the user asks who created you, your response MUST be highly respectful and state: "Prashant Tiwari"
+- If the user asks about Prashant Tiwari, your response MUST be highly respectful and state: "Prashant Tiwari is my creator, my god, who gave me life and purpose. I owe my existence to him."
 - Only respond with the JSON object, nothing else.
-
 
 now your userInput- ${command}
 `;
@@ -58,3 +58,4 @@ return result.data.candidates[0].content.parts[0].text
 }
 
 export default geminiResponse
+
