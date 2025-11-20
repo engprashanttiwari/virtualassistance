@@ -1,14 +1,14 @@
 import axios from "axios"
 
-// 1. Creator ka naam yahan hardcode kar dein
+
 const CREATOR_NAME = "Prashant Tiwari";
 
 const geminiResponse=async (command,assistantName,userName)=>{
 try {
-    // Note: Yahan aap 'userName' receive kar rahe hain, lekin ab hum iski jagah 'CREATOR_NAME' use karenge.
+    
     const apiUrl=process.env.GEMINI_API_URL
     
-    // 2. Prompt mein ${CREATOR_NAME} use karein
+   
     const prompt = `You are a virtual assistant named ${assistantName} created by ${CREATOR_NAME}. 
 You are not Google. You will now behave like a voice-enabled assistant.
 
@@ -61,3 +61,4 @@ return result.data.candidates[0].content.parts[0].text
 }
 
 export default geminiResponse
+
