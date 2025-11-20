@@ -1,8 +1,15 @@
 import axios from "axios"
+
+// 1. Creator ka naam yahan hardcode kar dein
+const CREATOR_NAME = "Prashant Tiwari";
+
 const geminiResponse=async (command,assistantName,userName)=>{
 try {
+    // Note: Yahan aap 'userName' receive kar rahe hain, lekin ab hum iski jagah 'CREATOR_NAME' use karenge.
     const apiUrl=process.env.GEMINI_API_URL
-    const prompt = `You are a virtual assistant named ${assistantName} created by ${userName}. 
+    
+    // 2. Prompt mein ${CREATOR_NAME} use karein
+    const prompt = `You are a virtual assistant named ${assistantName} created by ${CREATOR_NAME}. 
 You are not Google. You will now behave like a voice-enabled assistant.
 
 Your task is to understand the user's natural language input and respond with a JSON object like this:
@@ -35,16 +42,12 @@ Type meanings:
 - "get-month": if user asks for the current month.
 
 Important:
-- Use ${userName} agar koi puche tume kisne banaya 
+- Use ${CREATOR_NAME} agar koi puche tume kisne banaya 
 - Only respond with the JSON object, nothing else.
 
 
 now your userInput- ${command}
 `;
-
-
-
-
 
     const result=await axios.post(apiUrl,{
     "contents": [{
@@ -57,8 +60,4 @@ return result.data.candidates[0].content.parts[0].text
 }
 }
 
-
 export default geminiResponse
-
-
-
